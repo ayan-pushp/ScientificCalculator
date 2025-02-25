@@ -4,7 +4,8 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 git credentialsId: 'github-pat',
-                url: 'https://github.com/ayan-pushp/ScientificCalculator.git'
+                url: 'https://github.com/ayan-pushp/ScientificCalculator.git',
+                branch: 'main'
             }
         }
         stage('Build Code') {
