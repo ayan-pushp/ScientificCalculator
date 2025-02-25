@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+            maven 'Maven3' // Ensure this matches the name in Jenkins Maven settings
+        }
     stages {
         stage('Clone Repository') {
             steps {
