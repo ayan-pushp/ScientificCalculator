@@ -21,6 +21,17 @@ pipeline {
                 sh 'mvn test'
             }
         }
+        stage('Build Docker Image') {
+                    steps {
+                        sh 'docker build -t scientific-calculator .'
+                    }
+                }
+
+                stage('Run Docker Container') {
+                    steps {
+                        sh 'docker run -d --name calculator-container scientific-calculator'
+                    }
+                }
     }
     post {
         success {
