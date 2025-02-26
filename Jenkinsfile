@@ -29,9 +29,13 @@ pipeline {
 
                 stage('Run Docker Container') {
                     steps {
-                        sh 'docker run -d --name calculator-container scientific-calculator'
+                        script {
+                            sh 'docker rm -f calculator-container || true'
+                            sh 'docker run -d --name calculator-container scientific-calculator'
+                        }
                     }
                 }
+
     }
     post {
         success {
