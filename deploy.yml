@@ -1,0 +1,13 @@
+- name: Deploy Scientific Calculator Locally
+  hosts: localhost
+  become: false
+  tasks:
+    - name: Pull latest Docker image
+      command: docker pull ayanpushp/scientific-calculator:latest
+
+    - name: Stop existing container (if running)
+      ignore_errors: yes
+      command: docker rm -f calculator-container
+
+    - name: Run Docker container in interactive mode
+      command: docker run -dit --name calculator-container ayanpushp/scientific-calculator
