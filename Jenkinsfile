@@ -45,15 +45,9 @@ pipeline {
         }
         stage('Run Ansible Playbook') {
             steps {
-                script {
-                    ansiblePlaybook(
-                        playbook: 'deploy.yml',
-                        inventory: 'inventory'
-                    )
-                }
+                sh '/opt/homebrew/bin/ansible-playbook -i inventory deploy.yml'
             }
         }
-
 
     }
     post {
