@@ -10,4 +10,4 @@
       command: docker rm -f calculator-container
 
     - name: Run Docker container in interactive mode
-      command: docker run -it --name calculator-container ayanpushp/scientific-calculator
+      command: docker run -dit --name calculator-container ayanpushp/scientific-calculator

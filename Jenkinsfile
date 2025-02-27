@@ -43,15 +43,18 @@ pipeline {
                 }
             }
         }
-
-        stage('Run Docker Container') {
+        stage('Run Ansible Playbook') {
             steps {
                 script {
-                    sh 'docker rm -f calculator-container || true'
-                    sh "docker run -d --name calculator-container ${DOCKER_HUB_REPO}:latest"
+                    ansiblePlaybook(
+                        playbook: 'deploy.yml',
+                        inventory: 'inventory'
+                    )
                 }
             }
         }
+
+
     }
     post {
         success {
