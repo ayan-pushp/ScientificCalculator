@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    tools {
+        maven 'Maven3'
+    }
     environment {
         DOCKER_IMAGE_NAME = 'scientific-calculator'
         DOCKER_HUB_REPO = 'ayanpushp/scientific-calculator'
