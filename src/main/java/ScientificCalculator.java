@@ -6,7 +6,7 @@ public class ScientificCalculator {
     }
 
     public static long factorial(int x) {
-        if (x < 0) throw new IllegalArgumentException("Negative factorial not allowed.");
+        if (x < 0) throw new IllegalArgumentException("Negative factorial not allowed!");
         long fact = 1;
         for (int i = 1; i <= x; i++) fact *= i;
         return fact;
@@ -32,14 +32,14 @@ public class ScientificCalculator {
 
             if (!scanner.hasNextInt()) {
                 System.out.println("Invalid input. Please enter a number.");
-                scanner.next();  // Clear invalid input
+                scanner.next();
                 continue;
             }
 
             int choice = scanner.nextInt();
             if (choice == 5) {
                 System.out.println("Exiting...");
-                break;  // Stop the loop on exit
+                break;
             }
 
             System.out.print("Enter number: ");
