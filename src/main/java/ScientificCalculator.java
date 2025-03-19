@@ -25,7 +25,6 @@ public class ScientificCalculator {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Scientific Calculator Running...");
-        System.out.println("Use environment variables or standard input to pass values.");
 
         while (true) {
             System.out.println("1. Square Root  2. Factorial  3. Logarithm  4. Power  5. Exit");
